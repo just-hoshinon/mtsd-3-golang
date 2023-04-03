@@ -16,7 +16,7 @@ COPY main.go .
 
 RUN CGO_ENABLED=0 go build -o ./fizzbuzz
 
-FROM scratch
+FROM gcr.io/distroless/base-debian10
 
 COPY --from=build /fizzbuzz/fizzbuzz /fizzbuzz
 COPY templates /templates
